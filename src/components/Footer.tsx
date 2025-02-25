@@ -55,28 +55,22 @@ export default function Footer() {
               <Link href="#" className="inline-block">
                 <div className="relative h-12 w-[140px]">
                   <Image 
-                    src="/images/google-play-badge.png" 
+                    src="https://via.placeholder.com/140x42/2e8b57/FFFFFF?text=Google+Play" 
                     alt="Get it on Google Play"
                     fill
                     className="object-contain"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "https://via.placeholder.com/140x42/2e8b57/FFFFFF?text=Google+Play";
-                    }}
+                    unoptimized
                   />
                 </div>
               </Link>
               <Link href="#" className="inline-block">
                 <div className="relative h-12 w-[140px]">
                   <Image 
-                    src="/images/app-store-badge.png" 
+                    src="https://via.placeholder.com/140x42/2e8b57/FFFFFF?text=App+Store" 
                     alt="Download on the App Store"
                     fill
                     className="object-contain"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "https://via.placeholder.com/140x42/2e8b57/FFFFFF?text=App+Store";
-                    }}
+                    unoptimized
                   />
                 </div>
               </Link>
