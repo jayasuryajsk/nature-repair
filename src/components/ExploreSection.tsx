@@ -12,27 +12,29 @@ export default function ExploreSection() {
     <section className="max-w-7xl mx-auto px-4 py-14">
       <h2 className="text-2xl font-semibold text-gray-800 mb-8">Explore the Nature Repair Market</h2>
       
-      {/* Category Pills */}
-      <div className="flex flex-wrap gap-2 mb-10">
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={`px-6 py-3 rounded-full text-sm font-medium transition-colors ${
-              activeCategory === category
-                ? 'bg-green-700 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-            onClick={() => setActiveCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
+      {/* Category Pills - Horizontally scrollable on mobile */}
+      <div className="flex overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 pb-2 sm:pb-0 mb-8">
+        <div className="flex flex-nowrap gap-2 sm:flex-wrap">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`px-6 py-3 rounded-full text-sm font-medium transition-colors flex-shrink-0 touch-manipulation ${
+                activeCategory === category
+                  ? 'bg-green-700 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+              onClick={() => setActiveCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </div>
       
-      {/* Feature Cards */}
+      {/* Feature Cards - Better spacing on mobile */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Biodiversity Credits Card */}
-        <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow touch-manipulation">
           <div className="p-6">
             <div className="mb-5 w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
               <div className="bg-green-600 h-10 w-10 rounded-full flex items-center justify-center">
@@ -44,12 +46,12 @@ export default function ExploreSection() {
             </div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">Understand Biodiversity Credit Values</h3>
             <p className="text-gray-600 mb-4">Learn how biodiversity credits are valued and how they contribute to environmental restoration.</p>
-            <Link href="#" className="text-blue-600 font-medium hover:underline">Explore credits</Link>
+            <Link href="#" className="text-blue-600 font-medium hover:underline touch-manipulation inline-block py-1">Explore credits</Link>
           </div>
         </div>
         
         {/* Investment Card */}
-        <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow touch-manipulation">
           <div className="p-6">
             <div className="mb-5 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
               <div className="bg-blue-600 h-10 w-10 rounded-full flex items-center justify-center">
@@ -61,12 +63,12 @@ export default function ExploreSection() {
             </div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">Invest in Environmental Restoration</h3>
             <p className="text-gray-600 mb-4">Discover opportunities to invest in nature repair projects across Australia.</p>
-            <Link href="#" className="text-blue-600 font-medium hover:underline">Explore investments</Link>
+            <Link href="#" className="text-blue-600 font-medium hover:underline touch-manipulation inline-block py-1">Explore investments</Link>
           </div>
         </div>
         
         {/* Landholders Card */}
-        <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow touch-manipulation">
           <div className="p-6">
             <div className="mb-5 w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center">
               <div className="bg-amber-600 h-10 w-10 rounded-full flex items-center justify-center">
@@ -79,7 +81,7 @@ export default function ExploreSection() {
             </div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">For Landholders: Generate Biodiversity Credits</h3>
             <p className="text-gray-600 mb-4">Learn how to participate in the nature repair market by restoring ecosystems on your land.</p>
-            <Link href="#" className="text-blue-600 font-medium hover:underline">Landholder resources</Link>
+            <Link href="#" className="text-blue-600 font-medium hover:underline touch-manipulation inline-block py-1">Landholder resources</Link>
           </div>
         </div>
       </div>

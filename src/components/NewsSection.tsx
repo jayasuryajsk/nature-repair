@@ -50,11 +50,17 @@ export default function NewsSection() {
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-14 bg-white">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-8">Latest nature repair news</h2>
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-semibold text-gray-800">Latest nature repair news</h2>
+        <Link href="#" className="text-green-600 font-medium text-sm sm:text-base hover:underline touch-manipulation">
+          View all news
+        </Link>
+      </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+      {/* Scrollable on mobile, grid on desktop */}
+      <div className="flex overflow-x-auto pb-4 sm:pb-0 sm:overflow-visible sm:grid sm:grid-cols-2 lg:grid-cols-5 gap-5 -mx-4 sm:mx-0 px-4 sm:px-0">
         {newsItems.map((item) => (
-          <Link key={item.id} href={item.link} className="group flex flex-col">
+          <Link key={item.id} href={item.link} className="group flex flex-col min-w-[85%] sm:min-w-0 sm:flex-1 touch-manipulation pr-3 sm:pr-0">
             <div className="overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] relative mb-3">
               <Image
                 src={item.image}

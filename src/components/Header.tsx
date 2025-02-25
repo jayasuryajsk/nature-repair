@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between py-3 px-4 md:px-6 bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="flex items-center">
-        <Link href="/" className="flex-shrink-0">
+        <Link href="/" className="flex-shrink-0 touch-manipulation">
           <div className="relative w-[200px] h-[36px] flex items-center">
             {/* Logo */}
             <div className="bg-green-600 rounded-full w-8 h-8 flex items-center justify-center">
@@ -58,9 +58,9 @@ export default function Header() {
           </button>
         </div>
         
-        {/* Mobile menu button */}
+        {/* Mobile menu button - improved for touch */}
         <button 
-          className="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-600"
+          className="md:hidden p-2.5 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-600 touch-manipulation"
           onClick={toggleMobileMenu}
           aria-expanded={mobileMenuOpen}
         >
@@ -87,7 +87,7 @@ export default function Header() {
           <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-gray-200">
             <h2 className="text-lg font-semibold text-gray-900">Menu</h2>
             <button 
-              className="p-2 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+              className="p-2.5 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 touch-manipulation"
               onClick={toggleMobileMenu}
             >
               <span className="sr-only">Close menu</span>
@@ -99,56 +99,56 @@ export default function Header() {
           <div className="px-2 pt-2 pb-4 space-y-1">
             <Link 
               href="/projects" 
-              className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-3.5 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 touch-manipulation"
               onClick={toggleMobileMenu}
             >
               Projects
             </Link>
             <Link 
               href="/invest" 
-              className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-3.5 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 touch-manipulation"
               onClick={toggleMobileMenu}
             >
               Invest
             </Link>
             <Link 
               href="/credits" 
-              className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-3.5 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 touch-manipulation"
               onClick={toggleMobileMenu}
             >
               Credits
             </Link>
             <Link 
               href="/landholders" 
-              className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-3.5 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 touch-manipulation"
               onClick={toggleMobileMenu}
             >
               Landholders
             </Link>
             <Link 
               href="/partners" 
-              className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-3.5 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 touch-manipulation"
               onClick={toggleMobileMenu}
             >
               Partners
             </Link>
             <Link 
               href="/impact" 
-              className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-3.5 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 touch-manipulation"
               onClick={toggleMobileMenu}
             >
               Impact
             </Link>
             <Link 
               href="/news" 
-              className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-3.5 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 touch-manipulation"
               onClick={toggleMobileMenu}
             >
               News
             </Link>
             <Link 
               href="/about" 
-              className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-3.5 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 touch-manipulation"
               onClick={toggleMobileMenu}
             >
               About
@@ -156,17 +156,17 @@ export default function Header() {
           </div>
           <div className="border-t border-gray-200 pt-4 pb-3">
             <div className="flex items-center px-4 space-x-4">
-              <button aria-label="Saved projects" className="p-1">
+              <button aria-label="Saved projects" className="p-2.5 touch-manipulation">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                 </svg>
               </button>
-              <button aria-label="Notifications" className="p-1">
+              <button aria-label="Notifications" className="p-2.5 touch-manipulation">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                 </svg>
               </button>
-              <button aria-label="User profile" className="p-1">
+              <button aria-label="User profile" className="p-2.5 touch-manipulation">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>

@@ -30,12 +30,12 @@ export default function HeroSection() {
                 Support projects that repair our planet
               </h1>
               
-              {/* Tabs */}
-              <div className="flex">
+              {/* Tabs - Made scrollable on mobile */}
+              <div className="flex overflow-x-auto scrollbar-hide">
                 {tabs.map((tab) => (
                   <button
                     key={tab}
-                    className={`flex-1 py-3 px-4 text-center ${
+                    className={`flex-1 py-3 px-4 text-center whitespace-nowrap ${
                       activeTab === tab
                         ? 'text-green-600 border-b-2 border-green-600 font-medium'
                         : 'text-gray-600 hover:text-gray-900 border-b border-gray-200'
@@ -47,7 +47,7 @@ export default function HeroSection() {
                 ))}
               </div>
               
-              {/* Search Form */}
+              {/* Search Form - Improved for mobile touch */}
               <div className="p-5 flex flex-col md:flex-row gap-3">
                 <div className="flex-grow relative">
                   <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -58,18 +58,18 @@ export default function HeroSection() {
                   <input
                     type="text"
                     placeholder="Search by project type, region or ecosystem"
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500"
+                    className="w-full pl-10 pr-4 py-3.5 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-base"
                   />
                 </div>
                 
-                <div className="flex gap-2">
-                  <button className="px-4 py-3 border border-gray-300 bg-white text-gray-700 rounded-md hover:bg-gray-50 flex items-center whitespace-nowrap">
+                <div className="flex gap-2 mt-2 md:mt-0">
+                  <button className="px-4 py-3.5 border border-gray-300 bg-white text-gray-700 rounded-md hover:bg-gray-50 flex items-center whitespace-nowrap touch-manipulation">
                     <svg className="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clipRule="evenodd" />
                     </svg>
                     Filters
                   </button>
-                  <button className="px-6 py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 whitespace-nowrap">
+                  <button className="px-6 py-3.5 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 whitespace-nowrap touch-manipulation">
                     Search
                   </button>
                 </div>
