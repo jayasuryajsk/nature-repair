@@ -1,7 +1,7 @@
 import HeroSection from '../components/HeroSection';
 import ExploreSection from '../components/ExploreSection';
 import NewsSection from '../components/NewsSection';
-import Link from 'next/link';
+import StatisticsSection from '../components/StatisticsSection';
 
 export default function Home() {
   return (
@@ -9,36 +9,48 @@ export default function Home() {
       <HeroSection />
       <div className="py-4"></div> {/* Spacer */}
       <ExploreSection />
-      <div className="py-2"></div> {/* Spacer */}
+      <div className="py-6"></div> {/* Spacer */}
+      <StatisticsSection />
+      <div className="py-6"></div> {/* Spacer */}
       <NewsSection />
       
-      {/* Mobile Bottom Navigation Bar - Similar to realestate.com.au */}
+      {/* Mobile Bottom Browser Navigation Bar - Matching realestate.com.au design */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-40 md:hidden">
-        <div className="flex items-center justify-around">
-          <Link href="/" className="flex flex-col items-center py-2 px-3 touch-manipulation">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        <div className="flex items-center justify-between px-4 py-3">
+          {/* Back button */}
+          <button className="p-2 text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            <span className="text-xs mt-1 text-green-600">Home</span>
-          </Link>
-          <Link href="/projects" className="flex flex-col items-center py-2 px-3 touch-manipulation">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </button>
+          
+          {/* Forward button */}
+          <button className="p-2 text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <span className="text-xs mt-1 text-gray-600">Projects</span>
-          </Link>
-          <Link href="/invest" className="flex flex-col items-center py-2 px-3 touch-manipulation">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </button>
+          
+          {/* Plus button (centered, slightly larger) */}
+          <div className="relative -mt-8">
+            <button className="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center shadow">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+            </button>
+          </div>
+          
+          {/* 24 box */}
+          <div className="flex items-center justify-center border border-gray-300 rounded px-2.5 py-1.5">
+            <span className="text-gray-800 font-medium text-sm">24</span>
+          </div>
+          
+          {/* Three dots menu */}
+          <button className="p-2 text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
             </svg>
-            <span className="text-xs mt-1 text-gray-600">Invest</span>
-          </Link>
-          <Link href="/credits" className="flex flex-col items-center py-2 px-3 touch-manipulation">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-            </svg>
-            <span className="text-xs mt-1 text-gray-600">Credits</span>
-          </Link>
+          </button>
         </div>
       </div>
     </div>

@@ -2,11 +2,21 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState('Projects');
+  const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
   
   const tabs = ['Projects', 'Invest', 'Impact', 'Partners', 'Credits'];
+  
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/projects?search=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
   
   return (
     <section className="relative w-full bg-[#f5f7fa] py-8">
@@ -48,7 +58,7 @@ export default function HeroSection() {
               </div>
               
               {/* Search Form - Improved for mobile touch */}
-              <div className="p-5 flex flex-col md:flex-row gap-3">
+              <form onSubmit={handleSearch} className="p-5 flex flex-col md:flex-row gap-3">
                 <div className="flex-grow relative">
                   <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <svg className="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -59,21 +69,29 @@ export default function HeroSection() {
                     type="text"
                     placeholder="Search by project type, region or ecosystem"
                     className="w-full pl-10 pr-4 py-3.5 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-base"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
                   />
                 </div>
                 
                 <div className="flex gap-2 mt-2 md:mt-0">
-                  <button className="px-4 py-3.5 border border-gray-300 bg-white text-gray-700 rounded-md hover:bg-gray-50 flex items-center whitespace-nowrap touch-manipulation">
+                  <button 
+                    type="button"
+                    className="px-4 py-3.5 border border-gray-300 bg-white text-gray-700 rounded-md hover:bg-gray-50 flex items-center whitespace-nowrap touch-manipulation"
+                  >
                     <svg className="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clipRule="evenodd" />
                     </svg>
                     Filters
                   </button>
-                  <button className="px-6 py-3.5 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 whitespace-nowrap touch-manipulation">
+                  <button 
+                    type="submit"
+                    className="px-6 py-3.5 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 whitespace-nowrap touch-manipulation"
+                  >
                     Search
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
