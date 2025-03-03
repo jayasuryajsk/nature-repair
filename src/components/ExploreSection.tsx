@@ -6,11 +6,16 @@ import Link from 'next/link';
 export default function ExploreSection() {
   const [activeCategory, setActiveCategory] = useState('Biodiversity');
   
-  const categories = ['Biodiversity', 'Carbon', 'Restoration', 'Water', 'Indigenous'];
+  const categories = ['Biodiversity', 'Carbon', 'First Nations'];
   
   return (
     <section className="max-w-7xl mx-auto px-4 py-14">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-8">Explore the Nature Repair Market</h2>
+      <h2 className="text-2xl font-semibold text-gray-800 mb-8">Explore the Biodiversity and Carbon Markets</h2>
+      
+      {/* Market distinction note */}
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 text-sm text-blue-800">
+        <p><strong>Important Note:</strong> Biodiversity credits and carbon credits operate under different regulatory frameworks. Biodiversity credits fall under the Nature Repair Market, while carbon credits are regulated through the Australian Carbon Credit Units (ACCU) scheme. Currently, a land area can generate either biodiversity or carbon credits, but not both simultaneously.</p>
+      </div>
       
       {/* Category Pills - Horizontally scrollable on mobile */}
       <div className="flex overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 pb-2 sm:pb-0 mb-8">

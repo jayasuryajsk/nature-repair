@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Credits | Nature Repair Market',
-  description: 'Learn about nature repair credits and biodiversity certificates and how they support environmental restoration.',
+  description: 'Learn about biodiversity and carbon credits and how they support environmental restoration under different regulatory frameworks.',
 };
 
 export default function CreditsPage() {
@@ -11,53 +11,54 @@ export default function CreditsPage() {
     {
       id: 1,
       title: 'Biodiversity Credits',
-      description: 'Support specific ecological outcomes like habitat improvement for threatened species or ecosystem restoration.',
+      description: 'Support specific ecological outcomes under the Nature Repair Market, focusing on ecosystem restoration and protection of threatened species.',
       icon: '🦘',
       link: '/credits/biodiversity',
     },
     {
       id: 2,
       title: 'Carbon Credits',
-      description: 'Focused on carbon sequestration and storage in natural ecosystems, supporting climate change mitigation.',
+      description: 'Regulated under the ACCU scheme, these credits focus on carbon sequestration and storage in natural ecosystems, supporting climate change mitigation.',
       icon: '🌲',
       link: '/credits/carbon',
     },
+  ];
+
+  const marketTypes = [
     {
-      id: 3,
-      title: 'Water Quality Credits',
-      description: 'Support projects that improve water quality in rivers, streams, and coastal areas through reduced pollution and runoff.',
-      icon: '💧',
-      link: '/credits/water',
+      title: 'Regulated Markets',
+      description: 'Government-backed schemes with standardized methodologies and strict verification processes, including the federal Nature Repair Market and ACCU scheme.',
     },
     {
-      id: 4,
-      title: 'Habitat Credits',
-      description: 'Specifically designed to protect and enhance habitats for native species, improving biodiversity outcomes.',
-      icon: '🦎',
-      link: '/credits/habitat',
+      title: 'Voluntary Markets',
+      description: 'Non-regulatory markets where organizations voluntarily invest in environmental outcomes, often for corporate social responsibility goals.',
+    },
+    {
+      title: 'State & Regional Markets',
+      description: 'Specialized programs like the Great Barrier Reef credits (water quality) that operate under state or regional frameworks.',
     },
   ];
 
   const faqItems = [
     {
-      question: 'What are nature repair credits?',
-      answer: 'Nature repair credits are tradable certificates representing verified environmental improvements, such as biodiversity enhancement, habitat restoration, or ecological resilience. Each credit represents a specific environmental outcome that has been measured, verified, and registered according to the Nature Repair Market standards.',
+      question: 'What are biodiversity and carbon credits?',
+      answer: 'These are tradable certificates representing verified environmental improvements. Biodiversity credits (Nature Repair Market) focus on ecosystem restoration and protection, while carbon credits (ACCU scheme) represent measurable carbon sequestration or emissions reduction.',
     },
     {
-      question: 'How are nature repair credits verified?',
-      answer: 'Credits are verified through a rigorous process involving baseline assessment, implementation of conservation actions, independent verification by accredited third parties, and ongoing monitoring. This ensures the environmental benefits claimed are real, additional, and maintained over time.',
+      question: 'How are environmental credits verified?',
+      answer: 'Credits are verified through a rigorous process involving baseline assessment, implementation of conservation actions, independent verification by accredited third parties, and ongoing monitoring. Different schemes have different methodologies and requirements.',
     },
     {
-      question: 'How can I purchase nature repair credits?',
-      answer: 'Credits can be purchased directly through our marketplace platform. Buyers can browse available projects, select credits based on location, type, or environmental outcome, and complete transactions securely online. For large purchases, we also offer bespoke brokering services.',
+      question: 'Can the same land generate both biodiversity and carbon credits?',
+      answer: 'Currently, the same area of land can only generate either biodiversity credits or carbon credits, not both simultaneously. The government is developing methodologies to potentially allow for integrated approaches in the future.',
+    },
+    {
+      question: 'What\'s the difference between offsets and insets?',
+      answer: 'Offsets compensate for environmental impacts elsewhere, while insets involve reducing one\'s environmental footprint on their own property. Both approaches have different processes and regulatory requirements.',
     },
     {
       question: 'How long do credits last?',
-      answer: 'The duration of credits varies by project type. Some represent permanent protection (e.g., conservation covenants), while others may have defined timeframes (e.g., 25-100 years). The duration is clearly specified in each credit\'s documentation.',
-    },
-    {
-      question: 'Are nature repair credits tradable?',
-      answer: 'Yes, credits can be traded on our marketplace after initial purchase. This secondary market provides liquidity and allows for long-term investment in environmental outcomes. All trades are recorded on our registry to maintain transparency and traceability.',
+      answer: 'The duration of credits varies by project type and regulatory framework. Some represent permanent protection (e.g., conservation covenants), while others may have defined timeframes. The duration is specified in each credit\'s documentation.',
     },
   ];
 
@@ -87,6 +88,30 @@ export default function CreditsPage() {
           </div>
         </div>
         
+        {/* Legal Disclaimer */}
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6 sm:mb-8 text-sm text-amber-800">
+          <p className="font-bold mb-2">Important Legal Disclaimer</p>
+          <p>The information provided on this website is for general informational purposes only. Environmental markets are complex and subject to specific regulatory requirements. This website does not provide financial advice, and any investment decisions should be made in consultation with qualified financial and legal professionals.</p>
+        </div>
+        
+        {/* Market Frameworks Section */}
+        <div className="bg-white rounded-lg shadow-sm p-5 sm:p-8 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6">Understanding Environmental Markets</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 mb-6">
+            {marketTypes.map((market, index) => (
+              <div key={index} className="p-4 border border-gray-100 rounded-lg bg-gray-50">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">{market.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600">{market.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          <p className="text-gray-600 text-sm border-t border-gray-100 pt-4">
+            Note: Different markets have varying methodologies, verification requirements, and buyer motivations. The information provided here is simplified for clarity. Please consult with specialists for specific project advice.
+          </p>
+        </div>
+        
         {/* How Credits Work */}
         <div className="bg-white rounded-lg shadow-sm p-5 sm:p-8 mb-6 sm:mb-8">
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6">How Nature Repair Credits Work</h2>
@@ -114,8 +139,8 @@ export default function CreditsPage() {
         
         {/* Types of Credits */}
         <div className="mb-6 sm:mb-8">
-          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6">Types of Nature Repair Credits</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6">Biodiversity and Carbon Credits</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {creditTypes.map((type) => (
               <div key={type.id} className="bg-white rounded-lg shadow-sm p-5 sm:p-6 transition-all hover:shadow-md">
                 <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{type.icon}</div>
